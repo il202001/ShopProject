@@ -1,6 +1,6 @@
 package ShopProject;
 
-import GUIs.LoginGUI;
+import GUIs.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,5 +15,10 @@ public class shopproject {
         login.setVisible(true);
         System.out.println("Hello");
     }
-
+    
+    public static void OpenMainMenu(){
+        LoginGUI.setVisible(false);
+        MainMenuGUI.setVisible(true);
+    }
+    
 }

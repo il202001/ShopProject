@@ -7,17 +7,51 @@ import java.sql.ResultSet;
 
 public class AccountControles {
 
-    public static void CheckLogin(String email, String password) {
+    public static boolean CheckLogin(String email, String password) {
         try {
-            String sql = "SELECT userID FROM LoginDetails WHERE email =  '"+email+"' AND password = '"+/*hashPassword(password)*/password+"'";
+            String sql = "SELECT userID "
+                    + "FROM LoginDetails "
+                    + "WHERE email =  '"+email+"' AND password = '"+/*hashPassword(password)*/password+"'";
             ResultSet rs = executeQuery(getConection(), sql);
             if (rs.next()){
                 curentUserID = rs.getString("userID");
+                System.out.println(curentUserID);
+                return(true);
             }
-            System.out.println(curentUserID);
+            return(false);
+            
         }catch (Exception e){
             System.out.println("Not a user /n ---" +e);
+            
         }
+        return(false);
+    }
+    
+    public static void RegisterUser(String Email, String Password, String ClarifyPassword, String Adress){
+        try {
+            String emailCheck = "SELECT email"
+                    + "FROM LoginDetails"
+                    + "WHERE email = '" + Email + "'";
+            ResultSet rsEmailCheck = executeQuery(getConection(), emailCheck);
+
+        } catch (Exception noemail) {
+            try {
+                String sql = "SELECT userID "
+                        + "FROM LoginDetails "
+                        + "WHERE email =  '" + email + "' "
+                        + "AND password = '" +/*hashPassword(password)*/ password + "'";
+                ResultSet rs = executeQuery(getConection(), sql);
+                if (rs.next()) {
+                    curentUserID = rs.getString("userID");
+                }
+                System.out.println(curentUserID);
+            } catch (Exception ) {
+                System.out.println("Not a user /n ---" + e);
+            }
+        }
+        
+        
+        
     }
 
     public static String hashPassword(String password) throws Exception {

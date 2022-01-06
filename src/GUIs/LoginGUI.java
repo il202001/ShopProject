@@ -114,7 +114,15 @@ public class LoginGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_ForgotButtonActionPerformed
 
     private void SignInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInButtonActionPerformed
-        CheckLogin(InputEmail.getText(), new String(InputPassword.getPassword()));
+        if (CheckLogin(InputEmail.getText(), new String(InputPassword.getPassword()))){
+            System.out.println("it logs in");
+            MainMenuGUI mainMenu = new MainMenuGUI();
+            LoginGUI login = new LoginGUI();
+            mainMenu.setVisible(true);
+            login.setVisible(false);
+        }else{
+            System.out.println("not logs in");
+        }
     }//GEN-LAST:event_SignInButtonActionPerformed
 
     /**
