@@ -117,9 +117,9 @@ public class LoginGUI extends javax.swing.JFrame {
         if (CheckLogin(InputEmail.getText(), new String(InputPassword.getPassword()))){
             System.out.println("it logs in");
             MainMenuGUI mainMenu = new MainMenuGUI();
-            LoginGUI login = new LoginGUI();
+            
             mainMenu.setVisible(true);
-            login.setVisible(false);
+            this.dispose();
         }else{
             System.out.println("not logs in");
         }

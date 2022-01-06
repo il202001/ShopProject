@@ -128,9 +128,7 @@ public class RegisterGUI extends javax.swing.JFrame {
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
         if ((InputEmail.getText()).contains("@")) {
-            if (){
-                
-            }
+            System.out.println("ur somthing ");
         }else{
             System.out.println("not a valid email");
         }

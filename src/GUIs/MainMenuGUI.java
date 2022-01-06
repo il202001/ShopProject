@@ -118,9 +118,7 @@ public class MainMenuGUI extends javax.swing.JFrame {
 
     private void LogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutButtonActionPerformed
         if ((InputSearch.getText()).contains("@")) {
-            if (){
-
-            }
+            System.out.println("ur mum");
         }else{
             System.out.println("not a valid email");
         }

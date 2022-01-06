@@ -17,8 +17,7 @@ public class shopproject {
     }
     
     public static void OpenMainMenu(){
-        LoginGUI.setVisible(false);
-        MainMenuGUI.setVisible(true);
+        
     }
     
 }

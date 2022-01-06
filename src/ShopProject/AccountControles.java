@@ -35,19 +35,19 @@ public class AccountControles {
             ResultSet rsEmailCheck = executeQuery(getConection(), emailCheck);
 
         } catch (Exception noemail) {
-            try {
+            /*try {
                 String sql = "SELECT userID "
                         + "FROM LoginDetails "
                         + "WHERE email =  '" + email + "' "
-                        + "AND password = '" +/*hashPassword(password)*/ password + "'";
+                        + "AND password = '" +/*hashPassword(password) password + "'";
                 ResultSet rs = executeQuery(getConection(), sql);
                 if (rs.next()) {
                     curentUserID = rs.getString("userID");
                 }
                 System.out.println(curentUserID);
-            } catch (Exception ) {
+            } catch (Exception e) {
                 System.out.println("Not a user /n ---" + e);
-            }
+            }*/
         }
         
         
