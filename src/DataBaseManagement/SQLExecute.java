@@ -10,11 +10,10 @@ import java.sql.Statement;
 public class SQLExecute {
     
     private static final String DatabaseLocation = System.getProperty("user.dir") + "\\ShopPoject.accdb";
-    private static Connection con;
-    
+        
     public static Connection getConection() {
         try {
-            con = DriverManager.getConnection("jdbc:ucanaccess://" + DatabaseLocation, "", "");
+           Connection con = DriverManager.getConnection("jdbc:ucanaccess://" + DatabaseLocation, "", "");
             return con;
         }catch (Exception e){
             System.out.println("Error in the repository class: " +e);

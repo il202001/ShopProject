@@ -3,6 +3,7 @@
 import static DataBaseManagement.SQLExecute.*;
 import static ShopProject.shopproject.*;
 import java.security.MessageDigest;
+import java.sql.Connection;
 import java.sql.ResultSet;
 
 public class AccountControles {
@@ -12,12 +13,17 @@ public class AccountControles {
             String sql = "SELECT userID "
                     + "FROM LoginDetails "
                     + "WHERE email =  '"+email+"' AND password = '"+/*hashPassword(password)*/password+"'";
-            ResultSet rs = executeQuery(getConection(), sql);
+            Connection con = getConection();
+            ResultSet rs = executeQuery(con, sql);
             if (rs.next()){
                 curentUserID = rs.getString("userID");
                 System.out.println(curentUserID);
+                rs.close();
+                con.close();
                 return(true);
             }
+            rs.close();
+            con.close();
             return(false);
             
         }catch (Exception e){
