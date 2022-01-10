@@ -8,6 +8,7 @@ import java.awt.*;
 public class shopproject {
     
     public static String curentUserID;
+    public static int basketID;
 
     public static void main(String[] args) {
         LoginGUI login = new LoginGUI();
